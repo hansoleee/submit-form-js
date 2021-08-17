@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member 정보</title>
+</head>
+<body>
+<div style="display: flex;justify-content: space-between;width: 300px;">
+    <h2 style="margin: 0 0;">Member 정보</h2>
+    <div>
+        <button style="background-color: yellow;" th:onclick="|document.location='/members/${member.id}/delete';|">
+            삭제
+        </button>
+        <button onclick="document.location='/members'">목록</button>
+    </div>
+</div>
+
+<p>이름</p>
+<span id="name" th:text="${member.name}"></span>
+
+<p>나이</p>
+<span id="age" th:text="${member.age}"></span>
+
+<p>생성일</p>
+<span id="createdDate" th:text="${member.createdDate}"></span>
+
+<p>수정일</p>
+<span id="lastModifiedDate" th:text="${member.lastModifiedDate}"></span>
+</body>
+</html>
